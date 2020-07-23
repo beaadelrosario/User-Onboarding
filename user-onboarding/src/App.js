@@ -11,7 +11,7 @@ const StyledApp = styled.div`
   background: black;
   color:white;
   text-align:center;
-  padding: 20% 10%;
+  padding: 10% 0;
   font-family:Arial, Helvetica, sans-serif;
   letter-spacing:.5px;
 
@@ -23,11 +23,16 @@ const StyledApp = styled.div`
 `
 
 const initialFormValues = {
-  name: ''
+  name: '',
+  email: '',
+  password: '',
+  terms: false,
 }
 
 const initialFormErrors = {
-  name: ''
+  name: '',
+  email: '',
+  password: ''
 }
 
 const initialUsers = []
@@ -52,9 +57,19 @@ function App() {
     })
   }
 
+  const checkboxChange = (name, isChecked) => {
+    setFormValues({
+      ...formValues,
+        [name]: isChecked // not an array
+      })
+  }
+
   const submit = () => {
     const newUser = {
-      name: formValues.name.trim()
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      password: formValues.password.trim(),
+      terms: formValues.terms
     }
     postUser(newUser)
   }
@@ -96,6 +111,7 @@ function App() {
       <Form 
       values={formValues}
       inputChange={inputChange}
+      checkboxChange={checkboxChange}
       submit={submit}
       disabled={disabled}
       errors={formErrors}
