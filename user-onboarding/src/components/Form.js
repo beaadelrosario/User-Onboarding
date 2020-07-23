@@ -39,13 +39,24 @@ const StyledApp = styled.form`
     } */
 
     button {
-        padding: 2% 7%;
-        font-weight:700;
-        letter-spacing:1.1px;
+        width: 140px;
+        height: 45px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        font-weight: 800;
+        color: #000;
+        background-color: #fff;
+        border: none;
+        border-radius: 45px;
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease 0s;
+        cursor: pointer;
+        outline: none;
     }
 
     button:hover {
-        background:pink;
+        background:grey;
         color:red;
     }
 `
