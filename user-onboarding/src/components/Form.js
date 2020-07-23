@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 function Form (props) {
 
     const {
@@ -24,7 +23,7 @@ function Form (props) {
     return (
     <form className='form container' onSubmit={onSubmit}>
     <div>
-        <h2>Welcome to User Registration</h2>
+        <h2>Getting Started</h2>
 
         <div>
             <h3>Please complete this form to continue:</h3>

@@ -5,6 +5,22 @@ import * as yup from 'yup'
 import './App.css'
 import formSchema from './validation/formSchema'
 import User from './components/User'
+import styled from 'styled-components'
+
+const StyledApp = styled.div`
+  background: black;
+  color:white;
+  text-align:center;
+  padding: 20% 10%;
+  font-family:Arial, Helvetica, sans-serif;
+  letter-spacing:.5px;
+
+  h1 {
+    color:crimson;
+    text-transform: uppercase;
+  }
+
+`
 
 const initialFormValues = {
   name: ''
@@ -75,8 +91,8 @@ function App() {
   }, [formValues])
 
   return (
-    <div className='container'>
-      <h1>User Onboarding</h1>
+    <StyledApp className='container'>
+      <h1>User Registration</h1>
       <Form 
       values={formValues}
       inputChange={inputChange}
@@ -94,7 +110,7 @@ function App() {
         })
       }
 
-    </div>
+    </StyledApp>
   )
 }
 
