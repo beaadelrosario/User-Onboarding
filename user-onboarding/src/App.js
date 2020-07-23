@@ -25,6 +25,7 @@ const StyledApp = styled.div`
 const initialFormValues = {
   name: '',
   email: '',
+  role: '',
   password: '',
   terms: false,
 }
@@ -32,6 +33,7 @@ const initialFormValues = {
 const initialFormErrors = {
   name: '',
   email: '',
+  role:'',
   password: ''
 }
 
@@ -68,6 +70,7 @@ function App() {
     const newUser = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
+      role: formValues.role.trim(),
       password: formValues.password.trim(),
       terms: formValues.terms
     }

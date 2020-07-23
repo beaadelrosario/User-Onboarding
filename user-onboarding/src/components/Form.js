@@ -16,6 +16,11 @@ const StyledApp = styled.form`
         width:100%;
     }
 
+    select {
+        width: 87.3%;
+        padding: .5% 0;
+    }
+
     input {
         width: 97.6%;
         margin: 1% 0;
@@ -59,6 +64,7 @@ const StyledApp = styled.form`
         background:grey;
         color:red;
     }
+
 `
 function Form (props) {
 
@@ -130,10 +136,25 @@ function Form (props) {
                 </label>
                 <p id='user-error'>{errors.password}</p>
                 </div>
-
+                <div id='inputBoxes'className='input-box'>
+                <label>Role:&nbsp;
+                    <select
+                        onChange={onInputChange}
+                        value={values.role}
+                        name='role'
+                    >
+                        <option value=''>- Select an option -</option>
+                        <option value='student'>Student</option>
+                        <option value='alumni'>Alumni</option>
+                        <option value='instructor'>Instructor</option>
+                        <option value='tl'>Team Lead</option>
+                    </select>
+                </label>
+                <p id='user-error'>{errors.role}</p>
+                </div>
                 <div id='termsBox'className='input-box'>
-                    <h3>Agree to Terms of Service?</h3>
-                <label>&nbsp;
+                    {/* <h3>Agree to Terms of Service?</h3> */}
+                <label> Agree to Terms of Service? &nbsp;
                     <input
                         type="checkbox"
                         name='terms'
