@@ -34,7 +34,8 @@ const initialFormErrors = {
   name: '',
   email: '',
   role:'',
-  password: ''
+  password: '',
+  terms: ''
 }
 
 const initialUsers = []
@@ -62,7 +63,7 @@ function App() {
   const checkboxChange = (name, isChecked) => {
     setFormValues({
       ...formValues,
-        [name]: isChecked // not an array
+        [name]: isChecked
       })
   }
 

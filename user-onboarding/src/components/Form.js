@@ -26,11 +26,9 @@ const StyledApp = styled.form`
         margin: 1% 0;
     }
 
-    #user-error {
-        background:red;
-        color:white;
+    p {
+        color:teal;
         text-transform: uppercase;
-        font-weight:800;
         letter-spacing:1px;
     }
 
@@ -43,7 +41,7 @@ const StyledApp = styled.form`
         border:1px solid yellow;
     } */
 
-    button {
+    #registerBtn {
         width: 140px;
         height: 45px;
         font-size: 14px;
@@ -74,6 +72,7 @@ function Form (props) {
         inputChange,
         checkboxChange,
         errors,
+        disabled,
     } = props
 
     const onSubmit = evt => {
@@ -122,7 +121,7 @@ function Form (props) {
                         type='email'
                     />
                 </label>
-                <p id='user-error'>{errors.email}</p>
+                <p id='email-error'>{errors.email}</p>
                 </div>
 
                 <div id='inputBoxes'className='input-box'>
@@ -134,11 +133,11 @@ function Form (props) {
                         type='password'
                     />
                 </label>
-                <p id='user-error'>{errors.password}</p>
+                <p id='password-error'>{errors.password}</p>
                 </div>
                 <div id='inputBoxes'className='input-box'>
                 <label>Role:&nbsp;
-                    <select
+                    <select id='role-dropdown'
                         onChange={onInputChange}
                         value={values.role}
                         name='role'
@@ -150,7 +149,7 @@ function Form (props) {
                         <option value='tl'>Team Lead</option>
                     </select>
                 </label>
-                <p id='user-error'>{errors.role}</p>
+                <p id='checkbox-error'>{errors.role}</p>
                 </div>
                 <div id='termsBox'className='input-box'>
                     {/* <h3>Agree to Terms of Service?</h3> */}
@@ -162,11 +161,11 @@ function Form (props) {
                         onChange={onCheckboxChange}
                     />
                 </label>
-                <p id='user-error'>{errors.terms}</p>
+                <p id='terms-error'>{errors.terms}</p>
                 </div>
 
                 <div>
-                    <button>REGISTER</button>
+                    <button id='registerBtn' disabled={disabled}>REGISTER</button>
                 </div>
             </div>
         </div>
